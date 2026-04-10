@@ -11,7 +11,7 @@ namespace BT_DB_First
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddDbContext<QlVanphongphamContext.cs>(options =>
+            builder.Services.AddDbContext<QlVanphongphamContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
             var app = builder.Build();
 

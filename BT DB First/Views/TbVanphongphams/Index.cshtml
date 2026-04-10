@@ -1,0 +1,47 @@
+﻿@model IEnumerable<BT_DB_First.Models.TbVanphongpham>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tenvanphongpham)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mota)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaloaiNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tenvanphongpham)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mota)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaloaiNavigation.Maloai)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Mavanphongpham">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Mavanphongpham">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Mavanphongpham">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
