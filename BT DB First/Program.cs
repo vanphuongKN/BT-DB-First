@@ -1,3 +1,6 @@
+using BT_DB_First.Models;
+using Microsoft.EntityFrameworkCore;
+
 namespace BT_DB_First
 {
     public class Program
@@ -8,7 +11,8 @@ namespace BT_DB_First
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
+            builder.Services.AddDbContext<QlVanphongphamContext.cs>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
